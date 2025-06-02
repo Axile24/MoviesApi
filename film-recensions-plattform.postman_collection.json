@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "1ccfaadf-fa89-4eef-b18b-16ae3d2ec16f",
+		"name": "film-recensions-plattform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34129895"
+	},
+	"item": [
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"John Doe\",\n    \"email\": \"john@doe.com\",\n    \"password\": \"test123\",\n    \"confirmpassword\": \"test123\"\n    \n    \n\n    \n    \n   \n    \n    \n    \n    \n    \n    \n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/register",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA1NzM1YjEyMDEzMzRiODk1YmE4OCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NTg5ODIyfQ.g2BnCdU-t6QXowzjkhEx0D1ArQTSXonA9Yi5D3a_YUc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"john@doe.com\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJlZTJlZDMwOTdiYjU3YmRjYzZmNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzU5NTQ0fQ.C8LgBdjNBRgLJ6vxDrKsTOUDr2FtjEVLyvEqpy0MOLo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Penguins of Madagascar\",\n    \"director\": \"Bret Haaland, Nick Filippi\",\n    \"releaseYear\": \"2015\",\n    \"genre\": \"Comedy\"\n    \n\n    \n    \n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/movies",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/movies",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/movies/6662ecfad3097bb57bdcc6d3",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies",
+						"6662ecfad3097bb57bdcc6d3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJlY2UyZDMwOTdiYjU3YmRjYzZkMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzU5MjA2fQ.GwUVO5nUK07K1tkJc2o5lP3Acfec54YpHMrY06OaVws",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Woody Woodpecker\",\n    \"director\": \"Walter Lantz\",\n    \"releaseYear\": \"2018\",\n    \"genre\": \"Comedy, adventure\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/movies/6662ecfad3097bb57bdcc6d3",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies",
+						"6662ecfad3097bb57bdcc6d3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/:id/reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/movies/6662ecfad3097bb57bdcc6d3/reviews",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies",
+						"6662ecfad3097bb57bdcc6d3",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJlMDYwYTRjOWRhOTY1YzE0M2IwMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzU3Njk3fQ.Ue34YfvxTRbuxwRIff1gUxesunHd4Nm4CpqfdpmtwsQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/movies/6662e834d4f036385373bd0d",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"movies",
+						"6662e834d4f036385373bd0d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reviews",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJlZTJlZDMwOTdiYjU3YmRjYzZmNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzU5NTQ0fQ.C8LgBdjNBRgLJ6vxDrKsTOUDr2FtjEVLyvEqpy0MOLo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"movieId\": \"6662eeb3d3097bb57bdcc6f9\",\n  \"rating\": 10,\n  \"comment\": \"It is funny all the way , never a dull moment. They managed to sneak in touching moments too . These penguins are wily & go-getters . Nobody can mess with them . Kowalski is tech support , skipper is leader (obviously) , rico is worker & private is sincere eager follower . They can and do outwit everybody. Some people are saying it as hard selling and by-product of successful 'madagascar' franchise . But , this is thoughtfully scripted . Full entertainment for family . Dialogues are glib and mocking .\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/reviews",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/reviews",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reviews/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/reviews/6662ed45d3097bb57bdcc6dc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"reviews",
+						"6662ed45d3097bb57bdcc6dc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reviews/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJjNzZiODA1ZjU3ZWRmMzg3YTcwMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzQ5NjIyfQ.WYMlGpUA_8D1DsVJMgYpRq-KhMWogjxdCJCrGCR-01U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": \"1\",\n    \"comment\": \"A film without grace and without a well-executed script, an unfortunate montage, a flat photography, nothing innovative, nothing fun and completely a waste in something that many of us who grew up watching the cartoon would have enjoyed if the right decisions had been made, starting with-how the movie was made, and having a better direction.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/reviews/6662ed45d3097bb57bdcc6dc",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"reviews",
+						"6662ed45d3097bb57bdcc6dc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reviews/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjJjNzZiODA1ZjU3ZWRmMzg3YTcwMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE3NzQ5NjIyfQ.WYMlGpUA_8D1DsVJMgYpRq-KhMWogjxdCJCrGCR-01U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/reviews/6662edd7d3097bb57bdcc6ea",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"reviews",
+						"6662edd7d3097bb57bdcc6ea"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
