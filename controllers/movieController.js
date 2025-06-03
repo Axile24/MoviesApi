@@ -9,7 +9,7 @@ exports.createMovie = async (req, res) => {
   if (!title || !director || !releaseYear || !genre) {
     return res.status(422).json({ message: 'All fields are required' });
   }
-
+// här komme jag att skapa en ny film dynamically  jag behöver inte skapa en ny film i databasen
   const movie = new Movie({
     title,
     director,
