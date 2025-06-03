@@ -8,6 +8,8 @@ exports.addReview = async (req, res) => {
   if (!movieId || !userId || !rating || !comment) {
     return res.status(422).json({ message: 'All fields are required' });
   }
+  // dynamiskt,iskt skapa  en ny review
+
   const review = new Review({
     movieId,
     userId,

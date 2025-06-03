@@ -33,7 +33,8 @@ if(password !== confirmpassword) {
   const salt = await bcrypt.genSalt(12);
   const passwordHash = await bcrypt.hash(password, salt);
   
-  // create user
+  // create user dynamiskt --< det blir en user table i databasen
+  // create a new user instance 
   const user = new User({ 
     username, 
     email, 
