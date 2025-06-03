@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-// User Schema
+// User Schema      
+// A User can write many Reviews (User 1---* Review)
+// A User can have many Movies (User 1---* Movie)   
 const User = mongoose.model('User', {
     username: { 
         type: String, 

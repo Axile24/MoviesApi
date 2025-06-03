@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 // Review Schema
+// A Review is associated with one Movie and one User
+// A User can write many Reviews (User 1---* Review)
+// A Movie can have many Reviews (Movie 1---* Review)   
 const Review = mongoose.model('Review', {
     movieId: { 
         type: mongoose.Schema.Types.ObjectId, 
