@@ -69,6 +69,41 @@ A RESTful API for managing movies, users, and reviews, built with Node.js, Expre
 └── README.md
 ```
 
-## License
+DOCKER 
+-Hämta container from docker MongoDb latetest 
+-docker compse file 
+-**Start MongoDB container with Docker Compose:**
+  ```sh
+  docker-compose up -d
+  ```
 
-MIT
+- **Stop and remove the MongoDB container:**
+  ```sh
+  docker-compose down
+  ```
+
+- **View running containers:**
+  ```sh
+  docker ps
+  ```
+
+- **View MongoDB logs:**
+  ```sh
+  docker logs movies-reviews-mongodb
+  ```
+
+- **Remove volumes (delete all data):**
+  ```sh
+  docker-compose down -v
+
+  docker run -d --name movies-reviews-mongodb -p 27017:27017 mongo:latest
+
+
+  porten som anvämdes :
+  - "27017:27017"
+
+Mongo DB 
+show dbs 
+use movies-reviews
+show collections
+db.USERS.find()
