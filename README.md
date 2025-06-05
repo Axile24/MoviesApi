@@ -9,7 +9,7 @@ En RESTful API för att hantera filmer och recensioner.
 git clone https://github.com/Axile24/MoviesApi.git
 ```
 
-2. Installera beroenden:
+2. Installera:
 ```bash
 npm install
 ```
