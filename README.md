@@ -1,55 +1,63 @@
-# MoviesApi
+# Film Recensions Plattform
 
-A RESTful API for managing movies, users, and reviews, built with Node.js, Express, and MongoDB.
+En RESTful API för att hantera filmer och recensioner.
 
-## Features
+## Installation
 
-- User registration and authentication (JWT)
-- Movie CRUD operations
-- Review CRUD operations (linked to users and movies)
-- MongoDB integration (Docker support)
+1. Klona projektet:
+```bash
+git clone https://github.com/Axile24/MoviesApi.git
+```
 
-## Getting Started
+2. Installera beroenden:
+```bash
+npm install
+```
 
-### Prerequisites
+3. Skapa en `.env` fil med följande innehåll:
+```
+MONGODB_URI=mongodb://admin:password123@localhost:27017/movies-reviews?authSource=admin
+JWT_SECRET=din-hemliga-nyckel
+```
 
-- Node.js
-- npm
-- Docker (for MongoDB)
+## Starta Projektet
 
-### Installation
+1. Starta MongoDB med Docker:
+```bash
+docker-compose up -d
+```
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/Axile24/MoviesApi.git
-   cd MoviesApi
-   ```
-
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
-
-3. **Set up environment variables:**
-   - Copy `.env.example` to `.env` and update values as needed.
-
-4. **Start MongoDB with Docker:**
-   ```sh
-   docker-compose up -d
-   ```
-
-5. **Start the API server:**
-   ```sh
-   npm run dev
-   ```
+2. Starta servern:
+```bash
+npm run dev
+```
 
 ## API Endpoints
 
-- `POST /register` – Register a new user
-- `POST /login` – User login
-- `POST /movie` – Add a new movie
-- `GET /movies` – List all movies
-- `POST /review` – Add a review
+### Användare
+- `POST /register` - Registrera ny användare
+- `POST /login` - Logga in
+
+### Filmer
+- `GET /movies` - Hämta alla filmer
+- `GET /movies/:id` - Hämta specifik film
+- `GET /movies/ratings` - Hämta filmbetyg
+- `POST /movies` - Skapa film (Admin)
+- `PUT /movies/:id` - Uppdatera film (Admin)
+- `DELETE /movies/:id` - Ta bort film (Admin)
+
+### Recensioner
+- `POST /reviews` - Skapa recension
+- `GET /reviews` - Hämta alla recensioner
+- `PUT /reviews/:id` - Uppdatera recension
+- `DELETE /reviews/:id` - Ta bort recension
+
+## Teknologier
+- Node.js
+- Express.js
+- MongoDB
+- Docker
+- JWT Authentication
 
 ## Project Structure
 
