@@ -2,6 +2,9 @@
 
 En RESTful API för att hantera filmer och recensioner.
 
+# presentation
+
+https://docs.google.com/document/d/1BaeKyqIw9Qc-In4tqPS2o_iGfU8MCEx7QhPT3FouysA/edit?usp=sharing
 ## Installation
 
 1. Klona projektet:
